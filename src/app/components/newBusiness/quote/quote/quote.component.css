@@ -1,0 +1,536 @@
+/* Used to hold state object */
+pre {
+    display: none;
+}
+
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3px;
+
+    text-align: center;
+
+    font-size: var(--title-font-size);
+
+    border: var(--dev-border);
+
+    position: fixed;
+
+    width: 100%;
+    height: 60px;
+
+    
+    /*background-color: #00A3E7;*/
+
+    background: rgba(0,0,0,0.8); 
+
+    color: #fff;
+    
+
+    z-index: 1;
+}
+
+.title .back {
+    text-align: left;
+    width: 40px;
+    border: var(--dev-border);
+    padding-left: 10px;
+    color: #fff;
+}
+
+.title .forward {
+    text-align: right;
+    padding-right: 10px;
+    width: 40px;
+    border: var(--dev-border);
+    color: #fff;
+
+    visibility: hidden;
+
+    
+}
+
+
+.title div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.companyLogo {
+    height: 35px;
+    
+    border-radius: 4px;
+}
+
+.title div {
+    color: #fff;
+}
+
+
+
+.risks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;    
+    border: var(--dev-border);
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+    padding: 0;    
+
+    position: relative;  
+    top: 60px;
+
+     margin-bottom: 60px;  /*fix 60px gaps */
+
+
+}
+
+.insuredObject {
+    border: var(--dev-border);
+    width: 100%;
+    background-color: rgba(0,0,0,0.5); /*#aaa;*/
+    color: #fff;
+
+    text-align: left;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+
+    border-bottom: 1px #fff solid;
+    /*border-top: 1px #fff solid;*/
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.insuredData {
+    border: var(--dev-border);
+    width: 100%;
+    color: #fff;
+
+    text-align: left;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 30px;
+
+}
+
+.age {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+}
+
+#age {
+    border: none;
+    border-radius: 2px;
+}
+
+.gender{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+}
+
+.gender-item{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 5px;
+}
+
+
+
+
+
+
+.productDetail{
+    width: 100%;
+    border: var(--dev-border);
+
+}
+
+.coverage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+
+    font-size: 12px;
+    border: var(--dev-border);
+    width: 100%;
+
+    /*padding-bottom: 10px;*/
+
+    
+}
+
+.coverageName i {
+    
+}
+
+
+.coverageHeader {
+    text-align: left;
+    border: var(--dev-border);
+    width: 100%;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    background-color:  #f2f2f2; /*rgba(0, 163, 231,0.1);*/
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    /*margin-bottom: 10px; */
+
+    border-bottom: 1px #fff solid;
+
+
+}
+
+.coverageName {
+    padding-left: 10px;
+    font-size: 14px;
+    
+    
+}
+
+.openHelpIcon:hover {
+    color: red;
+    
+}
+
+.coverageDetail {
+    width: 80%;
+    border: var(--dev-border);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-wrap: wrap;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    gap: 10px;
+
+    
+    
+}
+
+.limitOption {
+    border: var(--dev-border);
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    
+    background-color: rgba(0, 163, 231,0.1);
+
+    font-size: 12px;
+
+    border-radius: 5px;
+
+
+}
+
+.limitOption:hover {
+    background-color: rgba(0, 163, 231,0.5);;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.limitOption .limit {
+    padding-left: 5px;
+    padding-top: 2px;  /*Alinged with the radio button*/
+
+}
+
+
+
+
+  .quoteHeder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00A3E7;;
+    margin-bottom: 20px;
+    border: var(--dev-border);
+    
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    z-index: 1;
+    color: #fff;
+
+    top: calc(100vh - 60px );
+
+
+}
+
+
+.premium {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.premium div {
+    padding-right: 10px;
+    font-size: 16px;
+}
+
+#premiumResult {
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+
+.premium a {
+    font-size: 12px;
+
+}
+
+.premium i {
+    padding-right: 10px;
+}
+
+
+
+/* The Modal (background) */
+.modal {
+    display: flex none; /* Hidden by default */
+    position: fixed; /* absolute-Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top:  0; /*-200px;*/
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* auto - Enable scroll if needed */
+    /* background-color: rgb(0,0,0); Fallback color */
+    background: rgba(0,0,0,0.8); /* Black w/ opacity */
+
+    align-items: center;
+    justify-content: space-around;
+
+    border: var(--dev-border);
+    
+  }
+
+/* Modal Content/Box */ 
+.modal-content {
+
+    background-color: #f2f2f2;    /* #fefefe; */
+     /*margin: auto; 15% from the top and centered */
+    padding: 0;
+    margin: 0;
+    /*border: 1px solid #888;*/
+    width: 90%; /* Could be more or less, depending on screen size */
+    height:  calc(100vh * 0.7);
+
+    border-radius: 4px;
+    overflow: hidden;
+
+    border: var(--dev-border);
+
+}  
+
+/* The Close Button */
+.cp-close {
+    position: absolute; 
+    top: 5px;
+    right: 10px;
+    color: #FF605C;;
+    float: right;
+    font-size: 20px;
+    /*font-weight: bold;*/
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background-color: #FF605C;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    /*margin: 5px;*/
+
+    padding-top: 1px;
+    padding-left: 0px;
+
+    border: var(--dev-border);
+}
+
+  
+.cp-close:hover,
+.cp-close:focus {
+    color: #fff;/*rgb(179, 179, 179);*/
+    cursor: pointer;
+
+  
+}
+
+.helpFrame {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: var(--dev-border);
+    width:100%;
+    height:100%;
+    /*margin: 10px auto;*/
+    border-radius: 4px;
+    
+    padding-top: 25px;    
+    
+}
+
+.helpText {
+    border: var(--dev-border);
+    width:100%;
+    height:100%;
+    background: #fff;
+    
+    padding: 20px;
+
+    
+}
+
+/* End of Modal Content/Box */ 
+
+
+/*  Tool tip */
+/**************************************************/
+.notetip {
+    position: relative;
+    display: inline-block;
+    /*border-bottom: 1px dotted black;  If you want dots under the hoverable text */
+    align-items: center;
+
+    border: var(--dev-border);
+  }
+  
+  /* Tooltip text */
+  .notetip .notetext {
+    visibility: hidden;
+    width: 120px; /*120px;*/
+    background-color: #555;
+    color: #fff;
+    text-align: left;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 3px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .notetip:hover .notetext {
+    visibility: visible;
+  }
+
+  /* Arrow */
+  .notetip-right {
+    top: -5px;
+    left: calc(100% + 10px);  
+  }
+
+
+  .notetip-right::after {
+      content: "";
+      position: absolute;
+      top: 12px;
+      right: 100%;
+      margin-top: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent #555 transparent transparent;
+  }
+
+
+  .notetip-bottom {
+    top: 135%;
+    left: 50%;  
+    margin-left: -60px;
+  }
+  
+  
+  .notetip-bottom::after {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent #555 transparent;
+  }
+
+  /**************************************************/
+  /* End of  tip*/
+
+
+
+
+
+/* start of desktop styles */
+
+@media screen and (max-width: 991px) {
+    /* start of large tablet styles */
+    
+}
+    
+@media screen and (max-width: 767px) {
+    /* start of medium tablet styles */
+    
+}
+    
+@media screen and (max-width: 479px) {
+    /* start of phone styles */
+    .coverageDetail {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+}
+
+/*
+@media(max-width:485px){
+
+    .coverageDetail {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+*/
+
+

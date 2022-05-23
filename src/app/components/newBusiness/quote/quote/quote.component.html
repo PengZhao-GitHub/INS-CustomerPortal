@@ -1,0 +1,105 @@
+<pre>{{ state$ | async | json }} </pre> 
+
+
+<div class="title">
+    <div class="back">
+        <!--<a  [routerLink]="['/products/', selectedInsurerID , selectedInsurer, selectedProductLineID , selectedProductLine , selectedInsurerUrl ]">-->
+        <a (click)="goBack()">
+            <i class="fas fa-arrow-circle-left fa-lg"></i>
+        </a>
+    </div>
+
+    <div>
+        <img class="companyLogo" src="{{selectedInsurerUrl}}" alt="">
+        <!-- <div>{{ selectedInsurer }} </div> 
+        <div>{{ selectedProductLine }}</div>-->
+        <div>{{selectedProduct}}</div>
+    </div>
+
+    <div class="forward"><i class="fas fa-arrow-right"></i></div>
+
+</div>
+
+<div class="risks">
+
+    <div class="insuredObject">
+        <div class="insuredData">
+            <span class="age">
+                <div>年齢</div>
+                <div>
+                    <select type="number" name="age" [(ngModel)]="age" id="age" min="0" max="100" (change)="onAgeChange($event)">
+                        <option *ngFor="let age of ageRange" value="{{age}}">{{age}}</option>
+                    </select>
+                </div>
+            </span>
+
+            <span class="gender">
+                <div class="gender-item"><input type="radio" name="gender" [(ngModel)]="sex" value="M" (change)="onGenderChange($event)">男性</div>
+                <div class="gender-item"><input type="radio" name="gender" [(ngModel)]="sex" value="F" (change)="onGenderChange($event)">女性</div>
+            </span>
+        </div>
+
+
+    </div>
+
+
+    <div *ngIf="productDetail" class="productDetail">
+        <div *ngFor="let coverage of coverages" class="coverage">
+            <div class="coverageHeader">
+                <input type="checkbox" checked="checked" value="{{ coverage.coverageCode }}"
+                    (change)="onSelectCoverage($event)">
+                <div class="coverageName">{{ coverage.coverageName}} 
+                    <i class="far fa-question-circle openHelpIcon notetip" (click)="openHelp(coverages.indexOf(coverage)+1)">
+                        <span class="notetext notetip-bottom">
+                            {{coverages.indexOf(coverage)}}:{{coverage.coverageName}}とは？
+                        </span>
+                    </i>
+                </div>
+            </div>
+
+            <form id="{{coverage.coverageCode}}" class="coverageDetail">
+                <div *ngFor="let option of coverage.limitOption" class="limitOption">
+                    <input type="radio" name="{{ coverage.coverageCode }}" value="{{ option }}" checked="checked"
+                        (change)="onSelectOption($event)">
+                    <div class="limit">{{ option | number }}円</div>
+                </div>
+
+            </form>
+
+            <!--
+                <div class="coverageDetail" id="{{ coverage.coverageCode }}">
+
+                </div>
+            -->
+
+            
+        </div>
+
+    </div>
+</div>
+
+
+<div class="quoteHeder">
+    <div class="premium">
+        <div>保険料 </div> <i class="fas fa-caret-right fa-2x"></i>
+        <div id="premiumResult"> {{ premium | number }}円/月</div>
+        <a class="btn btn-warning btn-sm" role="button">このプランで検討を進める</a>
+    </div>
+</div>
+
+
+
+<!-- popup windows to show AD -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <div class="cp-close" (click)="closeHelp()">
+            &times;
+        </div>
+        <div class="helpFrame">
+            <div class="helpText" id="helpText">
+                
+            </div>
+             
+        </div>
+    </div>
+</div>

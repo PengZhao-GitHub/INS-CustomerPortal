@@ -1,0 +1,13 @@
+<div *ngIf="profileID" class="container">
+    <img *ngIf="thumbnail" src="{{thumbnail}}" alt="Profile photo">
+    <div class="name"> {{ username }} </div>
+    <div *ngIf="email" class="email"><i class="fas fa-at"></i>{{ email }} </div>
+    <div class="id"><i class="far fa-address-card"></i>{{ profileID }}</div>
+    <qrcode [qrdata]="profileID" [width]="128" [errorCorrectionLevel]="'M'" [elementType]="'svg'"></qrcode>
+</div>
+<div *ngIf="!profileID" class="container2">
+    <div class="login-title">
+        You have logged out. Please log in again to access your private data.
+    </div>
+    <a (click)="login()"><i class="fas fa-sign-in-alt fa-2x"> <span>Login</span> </i></a>
+</div>

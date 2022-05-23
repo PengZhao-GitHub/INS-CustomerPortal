@@ -1,0 +1,75 @@
+<!--
+<div class="showcase">
+    <div id="slider">
+        <figure id="images" >
+            <img *ngFor="let showcase of showcases" src="{{baseUrl}}{{showcase.Content[0].url}}" alt="">
+            
+        </figure>
+    </div>
+</div>
+
+-->
+<div class="showcase">
+    <video src="{{showcaseVideo}}" autoplay muted loop></video>
+</div>
+
+<div class="title">
+
+    <div class="back">
+        <!--<a  [routerLink]="['/products/', selectedInsurerID , selectedInsurer, selectedProductLineID , selectedProductLine , selectedInsurerUrl ]">-->
+        <a [routerLink]="['/']">
+            <i class="fas fa-arrow-circle-left fa-lg"></i> <!--<i class="fas fa-arrow-left"></i> -->
+        </a>
+    </div>
+
+    <div>
+        <img class="companyLogo" src="{{selectedInsurerUrl}}" alt="">
+        <div>{{ selectedProductLine }}</div>
+    </div>
+
+    <div class="forward"><i class="fas fa-arrow-right"></i></div>
+
+    <!-- 
+    <img class="companyLogo" src="{{selectedInsurerUrl}}" alt="">
+    <div>{{ selectedInsurer }} </div> 
+    <div>{{ selectedProductLine }}</div>
+    -->
+</div>
+
+<!-- popup windows to show AD -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <div class="cp-close browser-dot" (click)="closeMovie()">
+            &times;
+        </div>
+        <div class="movie">
+            <iframe id="introduction" src="" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+<!-- Main view of the proudcts -->
+<!-------------------------------------------------------------------------------------------->
+<div class="container">
+    <app-product *ngFor="let product of products" [product]="product">
+    </app-product>
+</div>
+<!-------------------------------------------------------------------------------------------->
+
+
+<!--
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" (click)="closeMovie()">
+            &times;</span>
+        <div class="movie">
+            <iframe id="introduction" src="" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+-->

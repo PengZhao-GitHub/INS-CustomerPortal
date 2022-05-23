@@ -1,0 +1,127 @@
+<div class="container">
+    <div class="productTitle">
+        <div id="productName"> <i class="fas fa-play-circle" (click)="openMovie(product.url)" id="myBtn"></i>{{product.name}}
+        </div>
+        <div id="productDescription">{{product.description}} </div>
+
+    </div>
+    <div class="quoteBtn">
+        <a class="btn btn-warning btn-block btn-sm" role="button" (click)="getQuote()">まずは見積りトライ！</a>
+    </div>
+    <div *ngIf="productDetail" class="productDetail">
+        <div *ngFor="let coverage of coverages" class="coverage">
+            <div class="coverageName">
+                <div class="notetip">{{ coverage.coverageName}}
+                    <span class="notetext notetip-right">
+                        <div>保険金：</div>
+                        <div *ngFor="let option of coverage.limitOption">
+                            {{ option | number }}円
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- The Modal -->
+<!--
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" (click)="closeMovie()">&times;</span>
+        <div class="movie">
+            <iframe id="introduction" src="" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+-->
+
+
+
+<!--
+
+<div class="container">
+    <div>
+        Marketing Product Name: {{ product.product_id}} {{product.name}}
+    </div>
+    <div *ngIf="productDetail">
+        <div>
+            Product Name: {{ productDetail.productCode}}
+            {{ productDetail.productName }}
+            <input type="button" value="quote" (click)="changeToQuoteMode()">
+        </div>
+
+        <div *ngIf="!quoteMode">
+            <div *ngFor="let coverage of coverages">
+
+                <div *ngIf="!(sex=='M' && (coverage.riskCode ==='r06' || coverage.riskCode =='r07'))" class="coverage">
+                    <div class="coverageName">
+                        {{ coverage.coverageName}}
+                    </div>
+                    <div class="coverageDetail">
+                        <div *ngFor="let option of coverage.limitOption">
+                            {{ option | number }}円
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div *ngIf="quoteMode">
+                <div class="quoteInput">
+                    <span *ngIf="product.product_id === '001'">
+                        <input type="radio" name="gender" [(ngModel)]="sex" value="M">男性
+                        <input type="radio" name="gender" [(ngModel)]="sex" value="F">女性
+                    </span>
+                    <span *ngIf="product.product_id === '002'">
+                        <input type="radio" name="gender" [(ngModel)]="sex" value="F">女性
+                    </span>
+                    <span *ngIf="product.product_id === '003'">
+                        <input type="radio" name="gender" [(ngModel)]="sex" value="M">男性
+                    </span>
+
+                    年齢<input type="number" name="age" [(ngModel)]="age" id="">
+                    {{ premium }}
+                </div>
+
+                <div *ngFor="let coverage of coverages">
+                    <div *ngIf="!(sex=='M' && (coverage.riskCode ==='r06' || coverage.riskCode =='r07'))"
+                        class="coverage">
+                        <div class="coverageName">
+                            <input type="checkbox" name="{{ coverage.coverageName }}" id="{{ coverage.coverageName }}"
+                                value="{{ coverage.coverageCode }}" (change)="onSelectCoverage($event)">
+                            {{ coverage.coverageName}}
+                        </div>
+
+                        <div class="coverageDetail">
+               
+                        <select name="" id="">
+                            <option *ngFor="let option of coverage.limitOption" value="option">{{ option | number }}円</option>
+                        </select>
+                  
+                        <form id="{{coverage.coverageCode}}">
+                            <div *ngFor="let option of coverage.limitOption">
+                                <input type="radio" name="{{ coverage.coverageCode }}" value="{{ option }}"
+                                    checked="checked" (change)="onSelectOption($event)">
+                                {{ option | number }}円
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+</div>
+
+
+-->

@@ -1,0 +1,67 @@
+<div class="admin-container">
+
+
+    <div class="admin-card">
+        <div class="admin-card-header">
+            <div>
+                <i class="fas fa-photo-video fa-lg header-i"></i>Web Contents Management
+            </div>
+
+        </div>
+        <div class="api-end-point">
+            <a href="{{CMS_URL}}" target="_blank">Admin: {{CMS_URL}}</a>
+        </div>
+
+        <div *ngFor="let item of CMS_API_URLs" class="api-end-point">
+            <a href="{{item.url}}" target="_blank" style="padding-left:20px;">{{item.category}}:{{item.url}}</a>
+        </div>
+
+    </div>
+
+    <div class="admin-card">
+        <div class="admin-card-header">
+            <div>
+                <i class="fas fa-user-circle fa-lg header-i"></i>Authenticaiton Gateway
+            </div>
+
+        </div>
+        <div class="api-end-point">
+            <a href="{{AUTH_GATEWAY_URL}}" target="_blank">Authenticaiton Gateway: {{AUTH_GATEWAY_URL}}</a>
+        </div>
+        <div *ngFor="let auth of AUTH_URLs" class="api-end-point">
+            <input class="auth-option-selection" type="checkbox" [(ngModel)]="selected[auth.provider]" (change)="selectAuthOptions()" [disabled]="auth.provider==='email'"> <a href="{{auth.url}}" target="_blank" style="padding-left:20px;"><i class="fab fa-{{auth.provider}}"></i> {{auth.url}}</a>
+        </div>
+
+        <div class="api-end-point">
+            <a href="{{AUTH_CALLBACK_URL}}" target="_blank">Callback URL: {{AUTH_CALLBACK_URL}}</a>
+        </div>
+
+    </div>
+
+    <div class="admin-card">
+        <div class="admin-card-header">
+            <div>
+                <i class="fas fa-file-contract fa-lg header-i"></i>Policy Administration
+            </div>
+
+        </div>
+        <div class="api-end-point">
+            <a href="{{PAS_URL}}" target="_blank">API Endpoint: {{PAS_URL}}</a>
+        </div>
+        <div >
+            <i class="fas fa-user-circle fa-lg box-i"></i>
+            <input class="box-input" [(ngModel)]="clientName">
+        </div>
+        <div >
+            <i class="fas fa-key fa-lg box-i"></i>
+            <input type="password" class="box-input" [(ngModel)]="clientSecret">
+        </div>
+
+        <button class="button-box" (click)="getToken()">Get Token</button>
+        <textarea class="token-box" cols="30" rows="5" [(ngModel)]="APIToken"></textarea>
+    </div>
+
+
+
+
+</div>

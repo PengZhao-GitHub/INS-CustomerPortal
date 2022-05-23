@@ -1,0 +1,33 @@
+<div class="container">
+
+    <!--
+    <img src="http://localhost:1337/uploads/Screen_Shot_2020_07_07_at_14_02_10_923f3957bb.png" alt="">
+    -->
+    <!--
+    <img src="{{logoUrl}}" alt="">
+    -->
+    <div>
+        <div class="product">
+            <img [src]="logoUrl" alt="" class="productLogo">
+            {{ productLine.name }}
+
+        </div>
+
+        <div class="description">
+            {{ productLine.description }}
+        </div>
+        
+        <div class="insurer">
+            <div *ngFor="let insurer of insurers">
+                <a  (mouseover)="light(productLine.name + insurer.id)" (mouseout)="dark(productLine.name + insurer.id)" id="companylogoLink" [routerLink]="['/products/', insurer.id, insurer.name, productLine.id, productLine.name, baseUrl+insurer.logo.url]">
+                    <img src="{{baseUrl}}{{ insurer.logo.url}}" alt="{{ insurer.name }}" 
+                        class="companylogo"
+                        id="{{productLine.name + insurer.id}}"
+                        >
+
+                    <div>{{ insurer.name }}</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

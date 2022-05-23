@@ -1,0 +1,100 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 0;
+    color: #333;
+    text-align: center;
+    border: var(--dev-border);
+    padding-bottom: 50px;
+}
+
+.login-header {
+    width: 100%;
+    border: var(--dev-border);
+    
+    color: #00A3E7;
+
+    margin-bottom: 20px;
+}
+
+.login-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+}
+
+.google-btn{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 3px;
+    background: #4285F4;
+    border-radius: 3px;
+}
+.facebook-btn{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 3px;
+    background: #4267B2;
+    border-radius: 3px;
+}
+.twitter-btn{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 3px;
+    background: #1DA1F2;
+    border-radius: 3px;
+}
+
+.linkedin-btn{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 3px;
+    background: #2867B2;
+    border-radius: 3px;
+}
+
+.line-btn{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 3px;
+    background: #00B900;
+    border-radius: 3px;
+}
+
+.local-btn{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 3px;
+    background: #00A3E7;
+    border-radius: 3px;
+}
+
+a:hover {
+    
+    box-shadow: 2px 2px 2px #aaa;
+}
+
+i {
+    border: var(--dev-border);
+    flex: 1;
+    text-align: center;
+}
+
+span {
+    border: var(--dev-border);
+    flex: 3;
+    text-align: left;
+    font-size: 14px;
+}

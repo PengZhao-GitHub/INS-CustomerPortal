@@ -1,0 +1,127 @@
+<nav class="cp-navbar">
+    <span class="cp-open-slide">
+        <a (click)="openSideMenu()">
+            <svg width="30" height="30">
+                <path d="M0, 5 30,5" stroke="#fff" stroke-width="5" />
+                <path d="M0, 14 30,14" stroke="#fff" stroke-width="5" />
+                <path d="M0, 23 30, 23" stroke="#fff" stroke-width="5" />
+            </svg>
+        </a>
+    </span>
+
+    <ul class="cp-navbar-nav">
+        <li><a [routerLink]="['/']" (click)="closeSideMenu()">保険商品一覧</a></li>
+        <li><a href="#">見積もり</a></li>
+        <li><a href="#">事故のご連絡</a></li>
+        <li><a href="#">サービス</a></li>
+    </ul>
+
+    <div class="cp-search">
+        <input class="cp-search-input" type="text" placeholder="">
+        <i class="fas fa-search" (click)="search()"></i>
+    </div>
+
+
+    <div class="cp-right-menu">
+
+        <!--<i class="fas fa-search fa-2x"></i>-->
+        <i id="login" class="fas fa-sign-in-alt fa-lg" (click)="login()"></i>
+        <i id="profile" class="far fa-address-card fa-lg" (click)="showProfile()"></i>
+        <i id="logout" class="fas fa-sign-out-alt fa-lg" (click)="logout()"></i>
+        <i class="fas fa-shopping-cart fa-lg"></i>
+
+
+    </div>
+</nav>
+
+<div id="cp-side-menu" class="cp-side-nav">
+    <a class="cp-btn-close" (click)="closeSideMenu()">&times;</a>
+    <a class="cp-btn-login" id="btn-login" [routerLink]="['/login']" (click)="closeSideMenu()">
+        <i class="fas fa-sign-in-alt fa-2x"></i>ログイン
+    </a>
+    <a class="cp-btn-logout" id="btn-logout" [routerLink]="['/logout']" (click)="closeSideMenu()">
+        <i class="fas fa-sign-out-alt fa-2x"></i>ログアウト
+    </a>
+    <br>
+    <a [routerLink]="['/']" (click)="closeSideMenu()">保険商品一覧</a>
+    <a href="#">リスク・プロファイリング</a>
+    <a href="#">見積もり</a>
+    <a href="#">事故のご連絡</a>
+    <a href="#">サービス</a>
+    <hr style="border-color: #555;">
+    <a [routerLink]="['/admin']" (click)="closeSideMenu()"><i class="fas fa-cogs"></i>&nbsp;設定</a>
+</div>
+
+
+<div id="cp-main">
+
+
+    <!-- Main contents -->
+    <router-outlet></router-outlet>
+
+    <!-- Go back to top -->
+    <a class="gotop" id="gotop" (click)="goToTop()"><i class="fas fa-chevron-up fa-2x"></i></a>
+
+    <!-- Links -->
+    <div class="links" id="main-links">
+        <div class="links-inner">
+            <ul>
+                <li>
+                    <h6>IASについて</h6>
+                </li>
+                <li><a href="#">採用情報</a></li>
+                <li><a href="#">IASについて</a></li>
+                <li><a href="#">プレスリリース</a></li>
+                <li><a href="#">IASのコミュニティ活動</a></li>
+                <li><a href="#">IAS Global</a></li>
+            </ul>
+            <ul>
+                <li>
+                    <h6>IASでビジネス</h6>
+                </li>
+                <li><a href="#">IASで売る</a></li>
+                <li><a href="#">IAS Pay（決済サービス）</a></li>
+                <li><a href="#">IASで広告掲載をする</a></li>
+                <li><a href="#">›すべてのサービスを見る</a></li>
+            </ul>
+            <ul>
+                <li>
+                    <h6>IASでのお支払い</h6>
+                </li>
+                <li><a href="#">IASポイント</a></li>
+                <li><a href="#">IAS Ali-Pay</a></li>
+                <li><a href="#">パートナーポイントプログラム</a></li>
+                <li><a href="#">›すべての支払い方法を見る</a></li>
+            </ul>
+            <ul>
+                <li>
+                    <h6>ヘルプ</h6>
+                </li>
+                <li><a href="#">IASアシスタント</a></li>
+                <li><a href="#">セキュリティ</a></li>
+                <li><a href="#">ガイド</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="main-footer" id="main-footer">
+        <div class="lang"><i class="fas fa-globe fa-2x"></i> 日本語 (日本)</div>
+        <div class="footer-inner">
+            <ul>
+                <li><a href="#">プライバシー規約</a></li>
+                <li><a href="#">利用規約</a></li>
+                <li><a href="#">商標</a></li>
+                <li><a href="#">広告規約</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            &copy; InsuranceAsService 2020
+        </div>
+    </footer>
+
+
+</div>
